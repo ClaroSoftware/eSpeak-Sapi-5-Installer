@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Id="{3DA6DF03-E5CD-4A93-B06F-707484742BAB}" Codepage="1252" Language="1033" Manufacturer="Cainteoir Technologies" Name="eSpeak NG Text-to-Speech 64-bit" UpgradeCode="{B4F779EB-AC6C-49D2-A12D-4871E4520C0F}" Version="1.49.2">
+        <Package Comments="This installer database contains the logic and data required to install eSpeak NG Text-to-Speech 64-bit." Compressed="yes" Description="eSpeak NG Text-to-Speech 64-bit" InstallerVersion="200" Languages="1033" Manufacturer="Cainteoir Technologies" Platform="x64" />
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Component Id="SapiEnglish" Guid="{C8A141F7-F2A2-4141-8438-89BABF371CFD}" KeyPath="yes" Win64="yes">
+                <CreateFolder Directory="TARGETDIR" />
+                <RegistryValue Id="regC35D1B46D07F2B8F1CB1481CBFDE7574" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en" Value="eSpeak NG - English" Type="string" />
+                <RegistryValue Id="reg52F514E1DEB4CEE229B9CE8339DC7598" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en" Name="CLSID" Value="{61D23633-CE59-4101-8158-569FC6B51B49}" Type="string" />
+                <RegistryValue Id="reg409501EAFCF022977416486E0A55CB77" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en" Name="VoiceName" Value="en" Type="string" />
+                <RegistryValue Id="reg2FC0856E2DE82EFD120C654D8E820CE7" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en\Attributes" Name="Age" Value="Adult" Type="string" />
+                <RegistryValue Id="reg3E793C327F4024D948A409B553BD11F3" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en\Attributes" Name="Gender" Value="Male" Type="string" />
+                <RegistryValue Id="regF86B584710FBC6513F1BB68BAB9B9292" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en\Attributes" Name="Language" Value="9" Type="string" />
+                <RegistryValue Id="regFBBE57F84455BE24BBC80062DCABF857" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en\Attributes" Name="Vendor" Value="Cainteoir Text-to-Speech" Type="string" />
+                <RegistryValue Id="reg056ABD2901325F103FF7F064D6AFB6F6" Root="HKLM" Key="Software\Microsoft\Speech\Voices\Tokens\eSpeakNG_en\Attributes" Name="Version" Value="1.49.2" Type="string" />
+            </Component>
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="INSTALLDIR" Name="eSpeak NG" ShortName="e-ffrif_">
+                    <Component Id="espeak_ng_EXE" Guid="{220D42BC-89CD-4230-A458-CD31285EB152}" Win64="yes">
+                        <File Id="espeak_ng.exe" Name="espeak-ng.exe" KeyPath="yes" ShortName="zcdhwhmd.exe" DiskId="1" Source="SourceDir\File\espeak_ng.exe" />
+                    </Component>
+                    <Component Id="libespeak_ng_DLL" Guid="{AFDF57DE-D7E9-4781-BA0F-5D92FD56B045}" Win64="yes">
+                        <File Id="libespeak_ng.dll" Name="libespeak-ng.dll" KeyPath="yes" ShortName="8p0i22o4.dll" DiskId="1" Source="SourceDir\File\libespeak_ng.dll" />
+                        <RegistryValue Id="regE9B7D3AD0AF20269506B802D6A66E3AE" Root="HKLM" Key="SOFTWARE\eSpeak NG" Name="Path" Value="[INSTALLDIR]" Type="string" />
+                        <RegistryValue Id="reg7091C9C2C1F93C4F44A5FD1B3682E655" Root="HKLM" Key="Software\Classes\CLSID\{61D23633-CE59-4101-8158-569FC6B51B49}" Value="eSpeakNG.TtsEngine" Type="string" />
+                        <RegistryValue Id="reg0497FA2B53214FC41598654A11221F0F" Root="HKLM" Key="Software\Classes\CLSID\{61D23633-CE59-4101-8158-569FC6B51B49}\InprocServer32" Value="[INSTALLDIR]libespeak-ng.dll" Type="string" />
+                        <RegistryValue Id="reg74500277A9ED0C7A1492498EC6ECE84A" Root="HKLM" Key="Software\Classes\CLSID\{61D23633-CE59-4101-8158-569FC6B51B49}\InprocServer32" Name="ThreadingModel" Value="Both" Type="string" />
+                    </Component>
+                    <Directory Id="ESPEAKDATA" Name="espeak-ng-data" ShortName="6c_fozuf">
+                        <Component Id="phontab" Guid="{2F487F52-B95A-4894-AA14-F542865F05F8}" Win64="yes">
+                            <File Id="phontab" Name="phontab" KeyPath="yes" DiskId="1" Source="SourceDir\File\phontab" />
+                        </Component>
+                        <Component Id="phonindex" Guid="{60A70E08-90CE-4DD3-9B86-4EE80D80135A}" Win64="yes">
+                            <File Id="phonindex" Name="phonindex" KeyPath="yes" ShortName="nztlwzcu" DiskId="1" Source="SourceDir\File\phonindex" />
+                        </Component>
+                        <Component Id="phondata" Guid="{383B9843-2D65-44DC-9817-C256FA9B023B}" Win64="yes">
+                            <File Id="phondata" Name="phondata" KeyPath="yes" DiskId="1" Source="SourceDir\File\phondata" />
+                        </Component>
+                        <Component Id="intonations" Guid="{5E61DC47-AC62-497F-B907-E0C4E09C2BE7}" Win64="yes">
+                            <File Id="intonations" Name="intonations" KeyPath="yes" ShortName="sehven32" DiskId="1" Source="SourceDir\File\intonations" />
+                        </Component>
+                        <Component Id="af_dict" Guid="{A4E9A908-2377-4FBC-847A-C5D41595CE2F}" Win64="yes">
+                            <File Id="af_dict" Name="af_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\af_dict" />
+                        </Component>
+                        <Component Id="am_dict" Guid="{49E34398-D26D-44AC-804C-DB83B5233EC9}" Win64="yes">
+                            <File Id="am_dict" Name="am_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\am_dict" />
+                        </Component>
+                        <Component Id="an_dict" Guid="{62F0E2EA-7BEB-4AAE-A29B-601FA058FD2E}" Win64="yes">
+                            <File Id="an_dict" Name="an_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\an_dict" />
+                        </Component>
+                        <Component Id="as_dict" Guid="{336931F3-BD6D-401D-BE6C-F33E0ED16F6D}" Win64="yes">
+                            <File Id="as_dict" Name="as_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\as_dict" />
+                        </Component>
+                        <Component Id="az_dict" Guid="{9F24BA22-A49B-492D-8AFD-1C531673FBC8}" Win64="yes">
+                            <File Id="az_dict" Name="az_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\az_dict" />
+                        </Component>
+                        <Component Id="bg_dict" Guid="{754DF380-33FC-446A-B964-717C56639C20}" Win64="yes">
+                            <File Id="bg_dict" Name="bg_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\bg_dict" />
+                        </Component>
+                        <Component Id="bn_dict" Guid="{E373A9D4-C3C5-45D7-9232-DEB5ED5A7E13}" Win64="yes">
+                            <File Id="bn_dict" Name="bn_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\bn_dict" />
+                        </Component>
+                        <Component Id="bs_dict" Guid="{B843DE6D-42A3-4748-B487-C01B676C2D62}" Win64="yes">
+                            <File Id="bs_dict" Name="bs_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\bs_dict" />
+                        </Component>
+                        <Component Id="ca_dict" Guid="{32EE4EAA-207F-452B-89D4-FFBED362B86B}" Win64="yes">
+                            <File Id="ca_dict" Name="ca_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ca_dict" />
+                        </Component>
+                        <Component Id="cs_dict" Guid="{E4CB93BB-77F5-4E5B-95D5-2DA6480BA82D}" Win64="yes">
+                            <File Id="cs_dict" Name="cs_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\cs_dict" />
+                        </Component>
+                        <Component Id="cy_dict" Guid="{3D2E97E4-AEFA-409B-AB54-37D1F8BE7FFF}" Win64="yes">
+                            <File Id="cy_dict" Name="cy_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\cy_dict" />
+                        </Component>
+                        <Component Id="da_dict" Guid="{525401F4-21C6-4786-B556-62872E9BBAE3}" Win64="yes">
+                            <File Id="da_dict" Name="da_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\da_dict" />
+                        </Component>
+                        <Component Id="de_dict" Guid="{3A0E46C2-EBBB-4997-AFFC-282532835637}" Win64="yes">
+                            <File Id="de_dict" Name="de_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\de_dict" />
+                        </Component>
+                        <Component Id="el_dict" Guid="{E1D312A7-56DF-4931-B595-970B4BB1E3A7}" Win64="yes">
+                            <File Id="el_dict" Name="el_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\el_dict" />
+                        </Component>
+                        <Component Id="en_dict" Guid="{31BCA777-1F4F-4098-A317-1D420255BA5A}" Win64="yes">
+                            <File Id="en_dict" Name="en_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\en_dict" />
+                        </Component>
+                        <Component Id="eo_dict" Guid="{50AF0E8C-E436-4B58-9C46-AA11578FE516}" Win64="yes">
+                            <File Id="eo_dict" Name="eo_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\eo_dict" />
+                        </Component>
+                        <Component Id="es_dict" Guid="{E8DDE27A-FE2F-4BF7-9232-FA0D4EA13F7C}" Win64="yes">
+                            <File Id="es_dict" Name="es_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\es_dict" />
+                        </Component>
+                        <Component Id="et_dict" Guid="{FFA31092-1D89-4491-9850-734C61A67E43}" Win64="yes">
+                            <File Id="et_dict" Name="et_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\et_dict" />
+                        </Component>
+                        <Component Id="eu_dict" Guid="{423EB365-079E-40AE-98FA-EBF28989FD51}" Win64="yes">
+                            <File Id="eu_dict" Name="eu_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\eu_dict" />
+                        </Component>
+                        <Component Id="fa_dict" Guid="{2658AB55-F5BE-424E-8A39-83ED73D4860D}" Win64="yes">
+                            <File Id="fa_dict" Name="fa_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\fa_dict" />
+                        </Component>
+                        <Component Id="fi_dict" Guid="{2A3E02CF-E6D7-4923-B9CB-D8ED3CD4180B}" Win64="yes">
+                            <File Id="fi_dict" Name="fi_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\fi_dict" />
+                        </Component>
+                        <Component Id="fr_dict" Guid="{27005C97-AA1D-446D-B283-53E0A9A9EB5B}" Win64="yes">
+                            <File Id="fr_dict" Name="fr_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\fr_dict" />
+                        </Component>
+                        <Component Id="ga_dict" Guid="{E65EC407-2957-4B16-8B83-054C60BF790D}" Win64="yes">
+                            <File Id="ga_dict" Name="ga_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ga_dict" />
+                        </Component>
+                        <Component Id="gd_dict" Guid="{B2D1B94F-796A-41AB-A908-C55D385ABB0A}" Win64="yes">
+                            <File Id="gd_dict" Name="gd_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\gd_dict" />
+                        </Component>
+                        <Component Id="gn_dict" Guid="{5E0A35C9-D7F1-4511-8054-25BC405E85EC}" Win64="yes">
+                            <File Id="gn_dict" Name="gn_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\gn_dict" />
+                        </Component>
+                        <Component Id="grc_dict" Guid="{341E54AE-9EB1-4F2A-8FEE-B2E19F825041}" Win64="yes">
+                            <File Id="grc_dict" Name="grc_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\grc_dict" />
+                        </Component>
+                        <Component Id="gu_dict" Guid="{9E7BD68D-99E0-40B6-9D62-46AE7CEAC90D}" Win64="yes">
+                            <File Id="gu_dict" Name="gu_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\gu_dict" />
+                        </Component>
+                        <Component Id="hi_dict" Guid="{F973CAE1-8498-4F18-B735-C7D598CAB66B}" Win64="yes">
+                            <File Id="hi_dict" Name="hi_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\hi_dict" />
+                        </Component>
+                        <Component Id="hr_dict" Guid="{590EBD44-A337-4517-81C5-95372A9832D6}" Win64="yes">
+                            <File Id="hr_dict" Name="hr_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\hr_dict" />
+                        </Component>
+                        <Component Id="hu_dict" Guid="{550541C4-3773-4645-AFF5-6882AFA17447}" Win64="yes">
+                            <File Id="hu_dict" Name="hu_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\hu_dict" />
+                        </Component>
+                        <Component Id="hy_dict" Guid="{7E08F7D6-810F-419B-A51D-E4ACF700BB65}" Win64="yes">
+                            <File Id="hy_dict" Name="hy_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\hy_dict" />
+                        </Component>
+                        <Component Id="ia_dict" Guid="{04878221-9088-41E4-B1A2-9F86C5587A24}" Win64="yes">
+                            <File Id="ia_dict" Name="ia_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ia_dict" />
+                        </Component>
+                        <Component Id="id_dict" Guid="{76E1D896-063E-408B-B3DA-A5777D65F6A8}" Win64="yes">
+                            <File Id="id_dict" Name="id_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\id_dict" />
+                        </Component>
+                        <Component Id="is_dict" Guid="{374158CE-962D-4A24-929D-344DDC31F315}" Win64="yes">
+                            <File Id="is_dict" Name="is_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\is_dict" />
+                        </Component>
+                        <Component Id="it_dict" Guid="{A91D9D76-5BA7-45BB-B1B0-FF52EDA40141}" Win64="yes">
+                            <File Id="it_dict" Name="it_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\it_dict" />
+                        </Component>
+                        <Component Id="jbo_dict" Guid="{C1A9EB60-2825-460B-8F4F-E31610697BCE}" Win64="yes">
+                            <File Id="jbo_dict" Name="jbo_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\jbo_dict" />
+                        </Component>
+                        <Component Id="ka_dict" Guid="{0F794C22-A84C-4DDB-86B0-ABEFA9A46028}" Win64="yes">
+                            <File Id="ka_dict" Name="ka_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ka_dict" />
+                        </Component>
+                        <Component Id="kl_dict" Guid="{C2EBD9F1-C0D2-43B7-8BC5-2027C495DFEF}" Win64="yes">
+                            <File Id="kl_dict" Name="kl_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\kl_dict" />
+                        </Component>
+                        <Component Id="kn_dict" Guid="{6436B7F4-E4CB-49DD-B70C-FBB6BB1D4A56}" Win64="yes">
+                            <File Id="kn_dict" Name="kn_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\kn_dict" />
+                        </Component>
+                        <Component Id="ko_dict" Guid="{CB203A22-0DC3-4F55-86AB-D7F56027593D}" Win64="yes">
+                            <File Id="ko_dict" Name="ko_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ko_dict" />
+                        </Component>
+                        <Component Id="ku_dict" Guid="{C03DFC21-F4CC-404D-A6CA-3407DFE2A105}" Win64="yes">
+                            <File Id="ku_dict" Name="ku_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ku_dict" />
+                        </Component>
+                        <Component Id="ky_dict" Guid="{F4141472-DAB8-47F4-9F6A-F814DE06D37F}" Win64="yes">
+                            <File Id="ky_dict" Name="ky_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ky_dict" />
+                        </Component>
+                        <Component Id="la_dict" Guid="{70978CC5-D4CF-4C55-A145-47B23604C9DF}" Win64="yes">
+                            <File Id="la_dict" Name="la_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\la_dict" />
+                        </Component>
+                        <Component Id="lfn_dict" Guid="{5150EF36-DAC0-4062-BDF8-3CB4952A602A}" Win64="yes">
+                            <File Id="lfn_dict" Name="lfn_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\lfn_dict" />
+                        </Component>
+                        <Component Id="lt_dict" Guid="{A3D540E5-3DAF-4729-B474-B0310A72AAD0}" Win64="yes">
+                            <File Id="lt_dict" Name="lt_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\lt_dict" />
+                        </Component>
+                        <Component Id="lv_dict" Guid="{A2819267-183E-4F30-8E76-2932E30170FB}" Win64="yes">
+                            <File Id="lv_dict" Name="lv_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\lv_dict" />
+                        </Component>
+                        <Component Id="mk_dict" Guid="{EFF33FD9-4AF9-4294-8DB0-DD49536C306B}" Win64="yes">
+                            <File Id="mk_dict" Name="mk_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\mk_dict" />
+                        </Component>
+                        <Component Id="ml_dict" Guid="{2DEC00D4-E404-45B1-8C65-784BC68990F3}" Win64="yes">
+                            <File Id="ml_dict" Name="ml_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ml_dict" />
+                        </Component>
+                        <Component Id="mr_dict" Guid="{83BE3C18-E0E7-4396-90C2-92D02C4A4AD9}" Win64="yes">
+                            <File Id="mr_dict" Name="mr_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\mr_dict" />
+                        </Component>
+                        <Component Id="ms_dict" Guid="{ADAF663B-4938-4024-BC14-BADDA1DE2768}" Win64="yes">
+                            <File Id="ms_dict" Name="ms_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ms_dict" />
+                        </Component>
+                        <Component Id="mt_dict" Guid="{5FE13F53-1532-46FD-BD77-EFFEDEFF0EEB}" Win64="yes">
+                            <File Id="mt_dict" Name="mt_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\mt_dict" />
+                        </Component>
+                        <Component Id="my_dict" Guid="{2C066949-D649-4A1C-AFBF-C8642547F075}" Win64="yes">
+                            <File Id="my_dict" Name="my_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\my_dict" />
+                        </Component>
+                        <Component Id="nci_dict" Guid="{992FEB10-C20E-4981-A348-818DB186B5DF}" Win64="yes">
+                            <File Id="nci_dict" Name="nci_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\nci_dict" />
+                        </Component>
+                        <Component Id="ne_dict" Guid="{40A9DF83-F65A-474C-AC1D-2CB50CA0A974}" Win64="yes">
+                            <File Id="ne_dict" Name="ne_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ne_dict" />
+                        </Component>
+                        <Component Id="nl_dict" Guid="{D7C6BB61-AE46-459B-9EF7-AC6464028707}" Win64="yes">
+                            <File Id="nl_dict" Name="nl_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\nl_dict" />
+                        </Component>
+                        <Component Id="no_dict" Guid="{380CCB51-EF66-4030-9A19-420F1010AF87}" Win64="yes">
+                            <File Id="no_dict" Name="no_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\no_dict" />
+                        </Component>
+                        <Component Id="om_dict" Guid="{AE118D99-D85C-4E34-B378-C515A6477226}" Win64="yes">
+                            <File Id="om_dict" Name="om_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\om_dict" />
+                        </Component>
+                        <Component Id="or_dict" Guid="{1A24A7AA-480D-4A34-86DC-FA9958B5447F}" Win64="yes">
+                            <File Id="or_dict" Name="or_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\or_dict" />
+                        </Component>
+                        <Component Id="pa_dict" Guid="{20E3311D-981C-4824-9CEF-6419906D4667}" Win64="yes">
+                            <File Id="pa_dict" Name="pa_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\pa_dict" />
+                        </Component>
+                        <Component Id="pap_dict" Guid="{4DF6D666-425D-460F-A753-6FC093AE537D}" Win64="yes">
+                            <File Id="pap_dict" Name="pap_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\pap_dict" />
+                        </Component>
+                        <Component Id="pl_dict" Guid="{CFF2781A-6C36-4D9D-8B92-73BCD2B5AAAD}" Win64="yes">
+                            <File Id="pl_dict" Name="pl_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\pl_dict" />
+                        </Component>
+                        <Component Id="pt_dict" Guid="{BF2FF6A1-BD81-4D22-AC47-E1CCB2FBF2A2}" Win64="yes">
+                            <File Id="pt_dict" Name="pt_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\pt_dict" />
+                        </Component>
+                        <Component Id="ro_dict" Guid="{46851DEC-55CB-4925-80FB-6691A1DD438C}" Win64="yes">
+                            <File Id="ro_dict" Name="ro_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ro_dict" />
+                        </Component>
+                        <Component Id="ru_dict" Guid="{507E6E1C-9C40-4E65-BE4F-43DCDBBD2885}" Win64="yes">
+                            <File Id="ru_dict" Name="ru_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ru_dict" />
+                        </Component>
+                        <Component Id="si_dict" Guid="{6F02FAA1-D726-4402-8516-F10363A52246}" Win64="yes">
+                            <File Id="si_dict" Name="si_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\si_dict" />
+                        </Component>
+                        <Component Id="sk_dict" Guid="{D29D5A0B-BE40-48A2-9CDD-60E1AD64C24D}" Win64="yes">
+                            <File Id="sk_dict" Name="sk_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sk_dict" />
+                        </Component>
+                        <Component Id="sl_dict" Guid="{7675BC74-41F9-420E-88F8-C49A1FF84807}" Win64="yes">
+                            <File Id="sl_dict" Name="sl_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sl_dict" />
+                        </Component>
+                        <Component Id="sq_dict" Guid="{A68FC90B-0AF4-4AC5-A56A-D189D9782137}" Win64="yes">
+                            <File Id="sq_dict" Name="sq_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sq_dict" />
+                        </Component>
+                        <Component Id="sr_dict" Guid="{84838B7C-8222-4A8B-96C0-3C1D41876847}" Win64="yes">
+                            <File Id="sr_dict" Name="sr_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sr_dict" />
+                        </Component>
+                        <Component Id="sv_dict" Guid="{87AEABFA-1424-4D4B-A70D-7B6A37BE1BF9}" Win64="yes">
+                            <File Id="sv_dict" Name="sv_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sv_dict" />
+                        </Component>
+                        <Component Id="sw_dict" Guid="{AB46B5E2-CA53-47A1-B1D4-19C44862F3BA}" Win64="yes">
+                            <File Id="sw_dict" Name="sw_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\sw_dict" />
+                        </Component>
+                        <Component Id="ta_dict" Guid="{2176AA2A-97CD-4385-8D4E-BE4789B8B947}" Win64="yes">
+                            <File Id="ta_dict" Name="ta_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ta_dict" />
+                        </Component>
+                        <Component Id="te_dict" Guid="{7A4C7E01-7FB6-4567-9D43-F0B4BCC84F8D}" Win64="yes">
+                            <File Id="te_dict" Name="te_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\te_dict" />
+                        </Component>
+                        <Component Id="tn_dict" Guid="{B26BD08E-2A41-40DE-A5D7-9232CEC955F4}" Win64="yes">
+                            <File Id="tn_dict" Name="tn_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\tn_dict" />
+                        </Component>
+                        <Component Id="tr_dict" Guid="{D6C01CE8-2E9C-40F1-B00E-58493EE38956}" Win64="yes">
+                            <File Id="tr_dict" Name="tr_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\tr_dict" />
+                        </Component>
+                        <Component Id="tt_dict" Guid="{E4C1A8D4-9105-4169-B054-B8DC1ACB618A}" Win64="yes">
+                            <File Id="tt_dict" Name="tt_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\tt_dict" />
+                        </Component>
+                        <Component Id="ur_dict" Guid="{728D1F81-B329-47F9-8419-32B1EE13B126}" Win64="yes">
+                            <File Id="ur_dict" Name="ur_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\ur_dict" />
+                        </Component>
+                        <Component Id="vi_dict" Guid="{F4E1855E-A1C8-4DE1-A72F-0835C7794314}" Win64="yes">
+                            <File Id="vi_dict" Name="vi_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\vi_dict" />
+                        </Component>
+                        <Component Id="zh_dict" Guid="{6DF6E437-BF8B-4FCD-B094-D88C65ACDE6E}" Win64="yes">
+                            <File Id="zh_dict" Name="zh_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\zh_dict" />
+                        </Component>
+                        <Component Id="zhy_dict" Guid="{D6BF57DA-A408-40FC-9D8E-610C8AED5836}" Win64="yes">
+                            <File Id="zhy_dict" Name="zhy_dict" KeyPath="yes" DiskId="1" Source="SourceDir\File\zhy_dict" />
+                        </Component>
+                        <Directory Id="VOICES" Name="voices">
+                            <Component Id="eu" Guid="{E6AE6D58-7B00-4DC8-AB65-82959662D641}" Win64="yes">
+                                <File Id="eu" Name="eu" KeyPath="yes" DiskId="1" Source="SourceDir\File\eu" />
+                            </Component>
+                            <Component Id="ko" Guid="{0F759436-12BD-4FC5-80C0-6E755E021E40}" Win64="yes">
+                                <File Id="ko" Name="ko" KeyPath="yes" DiskId="1" Source="SourceDir\File\ko" />
+                            </Component>
+                            <Directory Id="AAV" Name="aav">
+                                <Component Id="vi" Guid="{36A8D59F-65BC-41A8-90EB-5BEED8A081D5}" Win64="yes">
+                                    <File Id="vi" Name="vi" KeyPath="yes" DiskId="1" Source="SourceDir\File\vi" />
+                                </Component>
+                                <Component Id="vi_VN_x_central" Guid="{9071139B-561E-4357-BC7B-9AD71548E6E3}" Win64="yes">
+                                    <File Id="vi_VN_x_central" Name="vi-VN-x-central" KeyPath="yes" ShortName="lv0svuhh" DiskId="1" Source="SourceDir\File\vi_VN_x_central" />
+                                </Component>
+                                <Component Id="vi_VN_X_south" Guid="{C9E625EE-8720-48AD-8B9E-67ADC197FD3F}" Win64="yes">
+                                    <File Id="vi_VN_x_south" Name="vi-VN-x-south" KeyPath="yes" ShortName="iyami9sp" DiskId="1" Source="SourceDir\File\vi_VN_x_south" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ART" Name="art">
+                                <Component Id="eo" Guid="{A6114E75-B0CB-47D7-B361-BFC7AA6B1273}" Win64="yes">
+                                    <File Id="eo" Name="eo" KeyPath="yes" DiskId="1" Source="SourceDir\File\eo" />
+                                </Component>
+                                <Component Id="ia" Guid="{13954C6E-7C80-486F-A326-8DEA77FB9201}" Win64="yes">
+                                    <File Id="ia" Name="ia" KeyPath="yes" DiskId="1" Source="SourceDir\File\ia" />
+                                </Component>
+                                <Component Id="jbo" Guid="{25B2B304-62DE-4959-9170-14275AEF1291}" Win64="yes">
+                                    <File Id="jbo" Name="jbo" KeyPath="yes" DiskId="1" Source="SourceDir\File\jbo" />
+                                </Component>
+                                <Component Id="lfn" Guid="{7F94C036-4943-40A1-BD97-700A2605B91F}" Win64="yes">
+                                    <File Id="lfn" Name="lfn" KeyPath="yes" DiskId="1" Source="SourceDir\File\lfn" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="AZC" Name="azc">
+                                <Component Id="nci" Guid="{0DEDA8AE-AFEB-4B04-A8A7-6C898B98D488}" Win64="yes">
+                                    <File Id="nci" Name="nci" KeyPath="yes" DiskId="1" Source="SourceDir\File\nci" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="BAT" Name="bat">
+                                <Component Id="lt" Guid="{6B89869A-83CF-4378-873D-0FDED6F42B85}" Win64="yes">
+                                    <File Id="lt" Name="lt" KeyPath="yes" DiskId="1" Source="SourceDir\File\lt" />
+                                </Component>
+                                <Component Id="lv" Guid="{886DF488-82FF-40F8-A110-5DDE8B35067F}" Win64="yes">
+                                    <File Id="lv" Name="lv" KeyPath="yes" DiskId="1" Source="SourceDir\File\lv" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="BNT" Name="bnt">
+                                <Component Id="sw" Guid="{F6F9BF32-33D4-45E9-B609-DEF046407DF1}" Win64="yes">
+                                    <File Id="sw" Name="sw" KeyPath="yes" DiskId="1" Source="SourceDir\File\sw" />
+                                </Component>
+                                <Component Id="tn" Guid="{EA170DF5-CEB3-4298-9BCB-E0D1E5ED36D2}" Win64="yes">
+                                    <File Id="tn" Name="tn" KeyPath="yes" DiskId="1" Source="SourceDir\File\tn" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="CCS" Name="ccs">
+                                <Component Id="ka" Guid="{24DB441C-ECD1-4039-89BC-391E763A5F64}" Win64="yes">
+                                    <File Id="ka" Name="ka" KeyPath="yes" DiskId="1" Source="SourceDir\File\ka" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="CEL" Name="cel">
+                                <Component Id="cy" Guid="{4B0DCD1C-941B-4F67-A5D5-D832FA04F9A9}" Win64="yes">
+                                    <File Id="cy" Name="cy" KeyPath="yes" DiskId="1" Source="SourceDir\File\cy" />
+                                </Component>
+                                <Component Id="ga" Guid="{C1D7253F-7A77-4E8B-8F38-EC46FE1F1D5F}" Win64="yes">
+                                    <File Id="ga" Name="ga" KeyPath="yes" DiskId="1" Source="SourceDir\File\ga" />
+                                </Component>
+                                <Component Id="gd" Guid="{F6DA62B5-CA75-4ACB-A4FA-6D8E20263E84}" Win64="yes">
+                                    <File Id="gd" Name="gd" KeyPath="yes" DiskId="1" Source="SourceDir\File\gd" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="CUS" Name="cus">
+                                <Component Id="om" Guid="{FAA66301-7FEA-4573-B037-04DB85E16B41}" Win64="yes">
+                                    <File Id="om" Name="om" KeyPath="yes" DiskId="1" Source="SourceDir\File\om" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="DRA" Name="dra">
+                                <Component Id="kn" Guid="{88DD1D19-BD57-4F11-B6E8-25FA84FBA0E8}" Win64="yes">
+                                    <File Id="kn" Name="kn" KeyPath="yes" DiskId="1" Source="SourceDir\File\kn" />
+                                </Component>
+                                <Component Id="ml" Guid="{866D7929-F3FD-48CE-9345-4FF2EED7801C}" Win64="yes">
+                                    <File Id="ml" Name="ml" KeyPath="yes" DiskId="1" Source="SourceDir\File\ml" />
+                                </Component>
+                                <Component Id="ta" Guid="{B53F318B-B9C3-43C0-BC16-0F8CA6E18BC4}" Win64="yes">
+                                    <File Id="ta" Name="ta" KeyPath="yes" DiskId="1" Source="SourceDir\File\ta" />
+                                </Component>
+                                <Component Id="te" Guid="{BD18B71C-537E-496D-B135-971BE62975DF}" Win64="yes">
+                                    <File Id="te" Name="te" KeyPath="yes" DiskId="1" Source="SourceDir\File\te" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ESX" Name="esx">
+                                <Component Id="kl" Guid="{6DE812B7-261E-4F8B-8C4F-1DC867B41F6C}" Win64="yes">
+                                    <File Id="kl" Name="kl" KeyPath="yes" DiskId="1" Source="SourceDir\File\kl" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="GMQ" Name="gmq">
+                                <Component Id="da" Guid="{43D84D6D-A3D1-457C-84AB-B30C569F7C21}" Win64="yes">
+                                    <File Id="da" Name="da" KeyPath="yes" DiskId="1" Source="SourceDir\File\da" />
+                                </Component>
+                                <Component Id="is" Guid="{BF7EADBC-8A31-41C7-9128-3AD1A0BE5816}" Win64="yes">
+                                    <File Id="is" Name="is" KeyPath="yes" DiskId="1" Source="SourceDir\File\is" />
+                                </Component>
+                                <Component Id="nb" Guid="{0FF21BC9-B43F-42E5-B6B5-7367744425D3}" Win64="yes">
+                                    <File Id="nb" Name="nb" KeyPath="yes" DiskId="1" Source="SourceDir\File\nb" />
+                                </Component>
+                                <Component Id="sv" Guid="{4BA838F8-D077-41C8-9F4B-D686472AB216}" Win64="yes">
+                                    <File Id="sv" Name="sv" KeyPath="yes" DiskId="1" Source="SourceDir\File\sv" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="GMW" Name="gmw">
+                                <Component Id="af" Guid="{F8C52D0C-3258-49D2-BB88-002A0B9395EB}" Win64="yes">
+                                    <File Id="af" Name="af" KeyPath="yes" DiskId="1" Source="SourceDir\File\af" />
+                                </Component>
+                                <Component Id="de" Guid="{38792D05-6781-43DD-95F4-78DD029FE134}" Win64="yes">
+                                    <File Id="de" Name="de" KeyPath="yes" DiskId="1" Source="SourceDir\File\de" />
+                                </Component>
+                                <Component Id="en" Guid="{527EE127-56C9-4A3B-A952-206038A8EB9C}" Win64="yes">
+                                    <File Id="en" Name="en" KeyPath="yes" DiskId="1" Source="SourceDir\File\en" />
+                                </Component>
+                                <Component Id="en_029" Guid="{78136EBE-64AD-42A9-AA66-040A8AA8F41A}" Win64="yes">
+                                    <File Id="en_029" Name="en-029" KeyPath="yes" DiskId="1" Source="SourceDir\File\en_029" />
+                                </Component>
+                                <Component Id="en_GB_scotland" Guid="{B7617BCB-AC08-431E-8141-6CAF47E339E5}" Win64="yes">
+                                    <File Id="en_GB_scotland" Name="en-GB-scotland" KeyPath="yes" ShortName="fb88wwfa" DiskId="1" Source="SourceDir\File\en_GB_scotland" />
+                                </Component>
+                                <Component Id="en_GB_x_gbclan" Guid="{13C50255-9292-471B-8504-11F5D60F916E}" Win64="yes">
+                                    <File Id="en_GB_x_gbclan" Name="en-GB-x-gbclan" KeyPath="yes" ShortName="wlsee2f4" DiskId="1" Source="SourceDir\File\en_GB_x_gbclan" />
+                                </Component>
+                                <Component Id="en_GB_x_gbcwmd" Guid="{8899C7B1-FBB9-4E5E-A86F-DECD42CF9517}" Win64="yes">
+                                    <File Id="en_GB_x_gbcwmd" Name="en-GB-x-gbcwmd" KeyPath="yes" ShortName="y3fhfg4u" DiskId="1" Source="SourceDir\File\en_GB_x_gbcwmd" />
+                                </Component>
+                                <Component Id="en_GB_x_rp" Guid="{94D2A7EE-956F-4A22-9A35-C930DF1F605B}" Win64="yes">
+                                    <File Id="en_GB_x_rp" Name="en-GB-x-rp" KeyPath="yes" ShortName="eumnfjfg" DiskId="1" Source="SourceDir\File\en_GB_x_rp" />
+                                </Component>
+                                <Component Id="en_US" Guid="{908D9137-F1BF-475C-B13C-B9695D07C2DE}" Win64="yes">
+                                    <File Id="en_US" Name="en-US" KeyPath="yes" DiskId="1" Source="SourceDir\File\en_US" />
+                                </Component>
+                                <Component Id="nl" Guid="{294BC28C-5E44-41D1-9DF1-F6C389546050}" Win64="yes">
+                                    <File Id="nl" Name="nl" KeyPath="yes" DiskId="1" Source="SourceDir\File\nl" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="GRK" Name="grk">
+                                <Component Id="el" Guid="{74F0C17D-3DC5-4B85-A7CB-F20A6430A8DD}" Win64="yes">
+                                    <File Id="el" Name="el" KeyPath="yes" DiskId="1" Source="SourceDir\File\el" />
+                                </Component>
+                                <Component Id="grc" Guid="{B3804F27-1C8C-419B-81D9-7E06501D3268}" Win64="yes">
+                                    <File Id="grc" Name="grc" KeyPath="yes" DiskId="1" Source="SourceDir\File\grc" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="INC" Name="inc">
+                                <Component Id="as" Guid="{0A0FB29D-77AD-4BB0-8765-F5CAA04174F0}" Win64="yes">
+                                    <File Id="as" Name="as" KeyPath="yes" DiskId="1" Source="SourceDir\File\as" />
+                                </Component>
+                                <Component Id="bn" Guid="{7C6EBF15-D6DD-4129-8882-0572645967B9}" Win64="yes">
+                                    <File Id="bn" Name="bn" KeyPath="yes" DiskId="1" Source="SourceDir\File\bn" />
+                                </Component>
+                                <Component Id="gu" Guid="{0F00646E-CE9B-4AD1-A0D1-450C40EAA357}" Win64="yes">
+                                    <File Id="gu" Name="gu" KeyPath="yes" DiskId="1" Source="SourceDir\File\gu" />
+                                </Component>
+                                <Component Id="hi" Guid="{6EBF1207-43A4-4958-A7E8-9CE52C3AFDE6}" Win64="yes">
+                                    <File Id="hi" Name="hi" KeyPath="yes" DiskId="1" Source="SourceDir\File\hi" />
+                                </Component>
+                                <Component Id="mr" Guid="{90488472-EEE7-468B-86EC-FB3816ADE7F9}" Win64="yes">
+                                    <File Id="mr" Name="mr" KeyPath="yes" DiskId="1" Source="SourceDir\File\mr" />
+                                </Component>
+                                <Component Id="ne" Guid="{9818C670-EE45-4665-BEC4-C3C3945F60F3}" Win64="yes">
+                                    <File Id="ne" Name="ne" KeyPath="yes" DiskId="1" Source="SourceDir\File\ne" />
+                                </Component>
+                                <Component Id="or" Guid="{626A8308-959D-40F0-B3A5-EDCF47F07AD2}" Win64="yes">
+                                    <File Id="or" Name="or" KeyPath="yes" DiskId="1" Source="SourceDir\File\or" />
+                                </Component>
+                                <Component Id="pa" Guid="{0F44AC40-58F2-497C-B4F5-6E9C1528019B}" Win64="yes">
+                                    <File Id="pa" Name="pa" KeyPath="yes" DiskId="1" Source="SourceDir\File\pa" />
+                                </Component>
+                                <Component Id="si" Guid="{D85410F8-7B49-4A81-9172-641C6D3E5041}" Win64="yes">
+                                    <File Id="si" Name="si" KeyPath="yes" DiskId="1" Source="SourceDir\File\si" />
+                                </Component>
+                                <Component Id="ur" Guid="{D13A0F3E-4357-4546-B408-0644939C41D5}" Win64="yes">
+                                    <File Id="ur" Name="ur" KeyPath="yes" DiskId="1" Source="SourceDir\File\ur" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="INE" Name="ine">
+                                <Component Id="hy" Guid="{8AC34F47-61FD-4918-AEC9-4FBDC9E90AD1}" Win64="yes">
+                                    <File Id="hy" Name="hy" KeyPath="yes" DiskId="1" Source="SourceDir\File\hy" />
+                                </Component>
+                                <Component Id="hy_arevmda" Guid="{E7510729-A886-4BCD-A616-9B4D74D8BA43}" Win64="yes">
+                                    <File Id="hy_arevmda" Name="hy-arevmda" KeyPath="yes" ShortName="p5qyqgn5" DiskId="1" Source="SourceDir\File\hy_arevmda" />
+                                </Component>
+                                <Component Id="sq" Guid="{80790CCF-4B20-4AC3-A19F-72890470D4F5}" Win64="yes">
+                                    <File Id="sq" Name="sq" KeyPath="yes" DiskId="1" Source="SourceDir\File\sq" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="IRA" Name="ira">
+                                <Component Id="fa" Guid="{14E33743-FDEF-40BD-9CE2-E5EDFA4C4887}" Win64="yes">
+                                    <File Id="fa" Name="fa" KeyPath="yes" DiskId="1" Source="SourceDir\File\fa" />
+                                </Component>
+                                <Component Id="fa_Latn" Guid="{4988D14D-90BE-4386-8642-19262D596864}" Win64="yes">
+                                    <File Id="fa_Latn" Name="fa-Latn" KeyPath="yes" DiskId="1" Source="SourceDir\File\fa_Latn" />
+                                </Component>
+                                <Component Id="ku" Guid="{E58A93BA-523A-4FB6-A877-B2F1718ACDFB}" Win64="yes">
+                                    <File Id="ku" Name="ku" KeyPath="yes" DiskId="1" Source="SourceDir\File\ku" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ITC" Name="itc">
+                                <Component Id="la" Guid="{6B7D7FBC-92B5-47ED-AC05-EFEC7BF87C6F}" Win64="yes">
+                                    <File Id="la" Name="la" KeyPath="yes" DiskId="1" Source="SourceDir\File\la" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="POZ" Name="poz">
+                                <Component Id="id" Guid="{C9BFD2A4-A105-4061-961A-DF6CB6C02854}" Win64="yes">
+                                    <File Id="id" Name="id" KeyPath="yes" DiskId="1" Source="SourceDir\File\id" />
+                                </Component>
+                                <Component Id="ms" Guid="{7E88BF7A-90E7-4C28-BBCF-50A4D4F55BA4}" Win64="yes">
+                                    <File Id="ms" Name="ms" KeyPath="yes" DiskId="1" Source="SourceDir\File\ms" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ROA" Name="roa">
+                                <Component Id="an" Guid="{B2A22EA3-3BF1-48CD-8E42-512A3E6DB140}" Win64="yes">
+                                    <File Id="an" Name="an" KeyPath="yes" DiskId="1" Source="SourceDir\File\an" />
+                                </Component>
+                                <Component Id="ca" Guid="{8E7829D5-353D-4F8A-A7E3-4F4D03BEAB35}" Win64="yes">
+                                    <File Id="ca" Name="ca" KeyPath="yes" DiskId="1" Source="SourceDir\File\ca" />
+                                </Component>
+                                <Component Id="es" Guid="{F261F844-2822-4A13-9ED9-D00D914F5571}" Win64="yes">
+                                    <File Id="es" Name="es" KeyPath="yes" DiskId="1" Source="SourceDir\File\es" />
+                                </Component>
+                                <Component Id="es_419" Guid="{E97680DA-F4BA-4A2B-A39D-D9B7E29E85EA}" Win64="yes">
+                                    <File Id="es_419" Name="es-419" KeyPath="yes" DiskId="1" Source="SourceDir\File\es_419" />
+                                </Component>
+                                <Component Id="fr" Guid="{69E627AA-54AE-495F-AE3C-CBDD66AD060B}" Win64="yes">
+                                    <File Id="fr" Name="fr" KeyPath="yes" DiskId="1" Source="SourceDir\File\fr" />
+                                </Component>
+                                <Component Id="fr_BE" Guid="{F06154D4-F6F7-4A9E-AF1D-605D643AD392}" Win64="yes">
+                                    <File Id="fr_BE" Name="fr-BE" KeyPath="yes" DiskId="1" Source="SourceDir\File\fr_BE" />
+                                </Component>
+                                <Component Id="it" Guid="{B8BD5085-3E1C-47A5-86C9-DB1650FAC29E}" Win64="yes">
+                                    <File Id="it" Name="it" KeyPath="yes" DiskId="1" Source="SourceDir\File\it" />
+                                </Component>
+                                <Component Id="pap" Guid="{6978C4BD-23AC-4FCF-B156-000A32B959DB}" Win64="yes">
+                                    <File Id="pap" Name="pap" KeyPath="yes" DiskId="1" Source="SourceDir\File\pap" />
+                                </Component>
+                                <Component Id="pt" Guid="{D0813CE0-D801-4203-AF91-998E9456E35C}" Win64="yes">
+                                    <File Id="pt" Name="pt" KeyPath="yes" DiskId="1" Source="SourceDir\File\pt" />
+                                </Component>
+                                <Component Id="pt_BR" Guid="{C6533938-B071-4ADA-8A26-E58A57A0B76E}" Win64="yes">
+                                    <File Id="pt_BR" Name="pt-BR" KeyPath="yes" DiskId="1" Source="SourceDir\File\pt_BR" />
+                                </Component>
+                                <Component Id="ro" Guid="{E2E0205E-5488-4A73-B3ED-10181F358987}" Win64="yes">
+                                    <File Id="ro" Name="ro" KeyPath="yes" DiskId="1" Source="SourceDir\File\ro" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="SAI" Name="sai">
+                                <Component Id="gn" Guid="{D11B73FF-7A67-49B0-8BE6-1345BA1EB00D}" Win64="yes">
+                                    <File Id="gn" Name="gn" KeyPath="yes" DiskId="1" Source="SourceDir\File\gn" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="SEM" Name="sem">
+                                <Component Id="am" Guid="{B28850DE-493A-464F-8889-8AA746F31596}" Win64="yes">
+                                    <File Id="am" Name="am" KeyPath="yes" DiskId="1" Source="SourceDir\File\am" />
+                                </Component>
+                                <Component Id="mt" Guid="{00388BFC-A813-4951-9ECE-FC95EBF95B9F}" Win64="yes">
+                                    <File Id="mt" Name="mt" KeyPath="yes" DiskId="1" Source="SourceDir\File\mt" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="SIT" Name="sit">
+                                <Component Id="cmn" Guid="{B9F21B2A-BD29-42DF-84D6-AD1CA29799B5}" Win64="yes">
+                                    <File Id="cmn" Name="cmn" KeyPath="yes" DiskId="1" Source="SourceDir\File\cmn" />
+                                </Component>
+                                <Component Id="my" Guid="{0927A4D6-4DA1-431C-ABFA-E9871165B3EC}" Win64="yes">
+                                    <File Id="my" Name="my" KeyPath="yes" DiskId="1" Source="SourceDir\File\my" />
+                                </Component>
+                                <Component Id="yue" Guid="{C08D04D1-B17B-40CA-B6B6-3C78F1D4E94A}" Win64="yes">
+                                    <File Id="yue" Name="yue" KeyPath="yes" DiskId="1" Source="SourceDir\File\yue" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="TRK" Name="trk">
+                                <Component Id="az" Guid="{E96920A5-43FE-4743-97CA-A09436D8A833}" Win64="yes">
+                                    <File Id="az" Name="az" KeyPath="yes" DiskId="1" Source="SourceDir\File\az" />
+                                </Component>
+                                <Component Id="tr" Guid="{A60A0F49-8D08-4CFA-AD3D-CA8807AFD8C6}" Win64="yes">
+                                    <File Id="tr" Name="tr" KeyPath="yes" DiskId="1" Source="SourceDir\File\tr" />
+                                </Component>
+                                <Component Id="tt" Guid="{7A3D1E2D-37B6-4CBD-A6C3-FD46D5BA5FBF}" Win64="yes">
+                                    <File Id="tt" Name="tt" KeyPath="yes" DiskId="1" Source="SourceDir\File\tt" />
+                                </Component>
+                                <Component Id="ky" Guid="{C2E2808E-56F4-40C4-BD41-DAC648E414BA}" Win64="yes">
+                                    <File Id="ky" Name="ky" KeyPath="yes" DiskId="1" Source="SourceDir\File\ky" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="URJ" Name="urj">
+                                <Component Id="et" Guid="{8B42703E-6FEF-4E41-9F9F-7EFA95FAB433}" Win64="yes">
+                                    <File Id="et" Name="et" KeyPath="yes" DiskId="1" Source="SourceDir\File\et" />
+                                </Component>
+                                <Component Id="fi" Guid="{B8407908-1BB2-4B22-BA1E-988400DEF724}" Win64="yes">
+                                    <File Id="fi" Name="fi" KeyPath="yes" DiskId="1" Source="SourceDir\File\fi" />
+                                </Component>
+                                <Component Id="hu" Guid="{ECE9B062-2E62-42C7-BC54-E210C50D7E44}" Win64="yes">
+                                    <File Id="hu" Name="hu" KeyPath="yes" DiskId="1" Source="SourceDir\File\hu" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ZLE" Name="zle">
+                                <Component Id="ru" Guid="{6D827F08-82E9-4169-A3EC-794DE2487109}" Win64="yes">
+                                    <File Id="ru" Name="ru" KeyPath="yes" DiskId="1" Source="SourceDir\File\ru" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ZLS" Name="zls">
+                                <Component Id="bg" Guid="{D75CE551-2BEC-4870-82C6-8AEC4BC4867A}" Win64="yes">
+                                    <File Id="bg" Name="bg" KeyPath="yes" DiskId="1" Source="SourceDir\File\bg" />
+                                </Component>
+                                <Component Id="bs" Guid="{A95A627B-E991-4814-9C98-3E1A7641AD22}" Win64="yes">
+                                    <File Id="bs" Name="bs" KeyPath="yes" DiskId="1" Source="SourceDir\File\bs" />
+                                </Component>
+                                <Component Id="hr" Guid="{C34C709A-D32C-431F-83D7-B666250C8B2E}" Win64="yes">
+                                    <File Id="hr" Name="hr" KeyPath="yes" DiskId="1" Source="SourceDir\File\hr" />
+                                </Component>
+                                <Component Id="mk" Guid="{70541A8E-CF44-49AA-A296-9D65397B5275}" Win64="yes">
+                                    <File Id="mk" Name="mk" KeyPath="yes" DiskId="1" Source="SourceDir\File\mk" />
+                                </Component>
+                                <Component Id="sl" Guid="{65183911-49B5-4767-8281-5E60C3BCD98D}" Win64="yes">
+                                    <File Id="sl" Name="sl" KeyPath="yes" DiskId="1" Source="SourceDir\File\sl" />
+                                </Component>
+                                <Component Id="sr" Guid="{35B89632-7F74-4016-B52F-DA7EE27E8FC7}" Win64="yes">
+                                    <File Id="sr" Name="sr" KeyPath="yes" DiskId="1" Source="SourceDir\File\sr" />
+                                </Component>
+                            </Directory>
+                            <Directory Id="ZLW" Name="zlw">
+                                <Component Id="cs" Guid="{4840D63E-9DAE-4AE5-946E-B03AA2EFA0C0}" Win64="yes">
+                                    <File Id="cs" Name="cs" KeyPath="yes" DiskId="1" Source="SourceDir\File\cs" />
+                                </Component>
+                                <Component Id="pl" Guid="{C772D1EB-708F-4523-BAE9-5F06AD90523A}" Win64="yes">
+                                    <File Id="pl" Name="pl" KeyPath="yes" DiskId="1" Source="SourceDir\File\pl" />
+                                </Component>
+                                <Component Id="sk" Guid="{124B16B9-9DD3-4E60-8000-06A45B5F7CB6}" Win64="yes">
+                                    <File Id="sk" Name="sk" KeyPath="yes" DiskId="1" Source="SourceDir\File\sk" />
+                                </Component>
+                            </Directory>
+                        </Directory>
+                    </Directory>
+                </Directory>
+            </Directory>
+        </Directory>
+        <Feature Id="All" Level="1" Title="eSpeak NG">
+            <ComponentRef Id="espeak_ng_EXE" />
+            <ComponentRef Id="libespeak_ng_DLL" />
+            <ComponentRef Id="phontab" />
+            <ComponentRef Id="phonindex" />
+            <ComponentRef Id="phondata" />
+            <ComponentRef Id="intonations" />
+        </Feature>
+        <Feature Id="lang" Level="1" Title="Languages">
+            <Feature Id="lang_af" Level="1" Title="Afrikaans">
+                <ComponentRef Id="af_dict" />
+                <ComponentRef Id="af" />
+            </Feature>
+            <Feature Id="lang_sq" Level="1" Title="Albanian">
+                <ComponentRef Id="sq_dict" />
+                <ComponentRef Id="sq" />
+            </Feature>
+            <Feature Id="lang_am" Level="1" Title="Amharic">
+                <ComponentRef Id="am_dict" />
+                <ComponentRef Id="am" />
+            </Feature>
+            <Feature Id="lang_an" Level="1" Title="Aragonese">
+                <ComponentRef Id="an_dict" />
+                <ComponentRef Id="an" />
+            </Feature>
+            <Feature Id="lang_hy" Level="1" Title="Armenian">
+                <ComponentRef Id="hy_dict" />
+                <ComponentRef Id="hy" />
+            </Feature>
+            <Feature Id="lang_hy_arevmda" Level="1" Title="Armenian (West)">
+                <ComponentRef Id="hy_dict" />
+                <ComponentRef Id="hy_arevmda" />
+            </Feature>
+            <Feature Id="lang_as" Level="1" Title="Assamese">
+                <ComponentRef Id="as_dict" />
+                <ComponentRef Id="as" />
+            </Feature>
+            <Feature Id="lang_az" Level="1" Title="Azerbaijani">
+                <ComponentRef Id="az_dict" />
+                <ComponentRef Id="az" />
+            </Feature>
+            <Feature Id="lang_eu" Level="1" Title="Basque">
+                <ComponentRef Id="eu_dict" />
+                <ComponentRef Id="eu" />
+            </Feature>
+            <Feature Id="lang_bn" Level="1" Title="Bengali">
+                <ComponentRef Id="bn_dict" />
+                <ComponentRef Id="bn" />
+            </Feature>
+            <Feature Id="lang_bs" Level="1" Title="Bosnian">
+                <ComponentRef Id="bs_dict" />
+                <ComponentRef Id="bs" />
+            </Feature>
+            <Feature Id="lang_bg" Level="1" Title="Bulgarian">
+                <ComponentRef Id="bg_dict" />
+                <ComponentRef Id="bg" />
+            </Feature>
+            <Feature Id="lang_my" Level="1" Title="Burmese">
+                <ComponentRef Id="my_dict" />
+                <ComponentRef Id="my" />
+            </Feature>
+            <Feature Id="lang_ca" Level="1" Title="Catalan">
+                <ComponentRef Id="ca_dict" />
+                <ComponentRef Id="ca" />
+            </Feature>
+            <Feature Id="lang_yue" Level="1" Title="Chinese (Cantonese)">
+                <ComponentRef Id="zhy_dict" />
+                <ComponentRef Id="yue" />
+            </Feature>
+            <Feature Id="lang_cmn" Level="1" Title="Chinese (Mandarin)">
+                <ComponentRef Id="zh_dict" />
+                <ComponentRef Id="cmn" />
+            </Feature>
+            <Feature Id="lang_hr" Level="1" Title="Croatian">
+                <ComponentRef Id="hr_dict" />
+                <ComponentRef Id="hr" />
+            </Feature>
+            <Feature Id="lang_cs" Level="1" Title="Czech">
+                <ComponentRef Id="cs_dict" />
+                <ComponentRef Id="cs" />
+            </Feature>
+            <Feature Id="lang_da" Level="1" Title="Danish">
+                <ComponentRef Id="da_dict" />
+                <ComponentRef Id="da" />
+            </Feature>
+            <Feature Id="lang_nl" Level="1" Title="Dutch">
+                <ComponentRef Id="nl_dict" />
+                <ComponentRef Id="nl" />
+            </Feature>
+            <Feature Id="lang_en" Level="1" Title="English">
+                <ComponentRef Id="SapiEnglish" />
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en" />
+            </Feature>
+            <Feature Id="lang_en_US" Level="1" Title="English (America)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_US" />
+            </Feature>
+            <Feature Id="lang_en_029" Level="1" Title="English (Caribbean)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_029" />
+            </Feature>
+            <Feature Id="lang_en_GB_x_gbclan" Level="1" Title="English (Lancashire, Great Britain)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_GB_x_gbclan" />
+            </Feature>
+            <Feature Id="lang_eb_GB_x_rp" Level="1" Title="English (Received Pronunciation)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_GB_x_rp" />
+            </Feature>
+            <Feature Id="lang_en_GB_scotland" Level="1" Title="English (Scotland)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_GB_scotland" />
+            </Feature>
+            <Feature Id="lang_en_GB_x_gbcwmd" Level="1" Title="English (West Midlands, Great Britain)">
+                <ComponentRef Id="en_dict" />
+                <ComponentRef Id="en_GB_x_gbcwmd" />
+            </Feature>
+            <Feature Id="lang_eo" Level="1" Title="Esperanto">
+                <ComponentRef Id="eo_dict" />
+                <ComponentRef Id="eo" />
+            </Feature>
+            <Feature Id="lang_et" Level="1" Title="Estonian">
+                <ComponentRef Id="et_dict" />
+                <ComponentRef Id="et" />
+            </Feature>
+            <Feature Id="lang_fi" Level="1" Title="Finnish">
+                <ComponentRef Id="fi_dict" />
+                <ComponentRef Id="fi" />
+            </Feature>
+            <Feature Id="lang_fr" Level="1" Title="French">
+                <ComponentRef Id="fr_dict" />
+                <ComponentRef Id="fr" />
+            </Feature>
+            <Feature Id="lang_fr_BE" Level="1" Title="French (Belgium)">
+                <ComponentRef Id="fr_dict" />
+                <ComponentRef Id="fr_BE" />
+            </Feature>
+            <Feature Id="lang_ga" Level="1" Title="Gaelic (Irish)">
+                <ComponentRef Id="ga_dict" />
+                <ComponentRef Id="ga" />
+            </Feature>
+            <Feature Id="lang_gd" Level="1" Title="Gaelic (Scottish)">
+                <ComponentRef Id="gd_dict" />
+                <ComponentRef Id="gd" />
+            </Feature>
+            <Feature Id="lang_ka" Level="1" Title="Georgian">
+                <ComponentRef Id="ka_dict" />
+                <ComponentRef Id="ka" />
+            </Feature>
+            <Feature Id="lang_de" Level="1" Title="German">
+                <ComponentRef Id="de_dict" />
+                <ComponentRef Id="de" />
+            </Feature>
+            <Feature Id="lang_el" Level="1" Title="Greek">
+                <ComponentRef Id="el_dict" />
+                <ComponentRef Id="el" />
+            </Feature>
+            <Feature Id="lang_grc" Level="1" Title="Greek (Ancient)">
+                <ComponentRef Id="grc_dict" />
+                <ComponentRef Id="grc" />
+            </Feature>
+            <Feature Id="lang_kl" Level="1" Title="Greenlandic">
+                <ComponentRef Id="kl_dict" />
+                <ComponentRef Id="kl" />
+            </Feature>
+            <Feature Id="lang_gn" Level="1" Title="Guarani">
+                <ComponentRef Id="gn_dict" />
+                <ComponentRef Id="gn" />
+            </Feature>
+            <Feature Id="lang_gu" Level="1" Title="Gujarati">
+                <ComponentRef Id="gu_dict" />
+                <ComponentRef Id="gu" />
+            </Feature>
+            <Feature Id="lang_hi" Level="1" Title="Hindi">
+                <ComponentRef Id="hi_dict" />
+                <ComponentRef Id="hi" />
+            </Feature>
+            <Feature Id="lang_hu" Level="1" Title="Hungarian">
+                <ComponentRef Id="hu_dict" />
+                <ComponentRef Id="hu" />
+            </Feature>
+            <Feature Id="lang_is" Level="1" Title="Icelandic">
+                <ComponentRef Id="is_dict" />
+                <ComponentRef Id="is" />
+            </Feature>
+            <Feature Id="lang_id" Level="1" Title="Indonesian">
+                <ComponentRef Id="id_dict" />
+                <ComponentRef Id="id" />
+            </Feature>
+            <Feature Id="lang_ia" Level="1" Title="Interlingua">
+                <ComponentRef Id="ia_dict" />
+                <ComponentRef Id="ia" />
+            </Feature>
+            <Feature Id="lang_it" Level="1" Title="Italian">
+                <ComponentRef Id="it_dict" />
+                <ComponentRef Id="it" />
+            </Feature>
+            <Feature Id="lang_kn" Level="1" Title="Kannada">
+                <ComponentRef Id="kn_dict" />
+                <ComponentRef Id="kn" />
+            </Feature>
+            <Feature Id="lang_ko" Level="1" Title="Korean">
+                <ComponentRef Id="ko_dict" />
+                <ComponentRef Id="ko" />
+            </Feature>
+            <Feature Id="lang_ku" Level="1" Title="Kurdish">
+                <ComponentRef Id="ku_dict" />
+                <ComponentRef Id="ku" />
+            </Feature>
+            <Feature Id="lang_ky" Level="1" Title="Kyrgyz">
+                <ComponentRef Id="ky_dict" />
+                <ComponentRef Id="ky" />
+            </Feature>
+            <Feature Id="lang_la" Level="1" Title="Latin">
+                <ComponentRef Id="la_dict" />
+                <ComponentRef Id="la" />
+            </Feature>
+            <Feature Id="lang_lv" Level="1" Title="Latvian">
+                <ComponentRef Id="lv_dict" />
+                <ComponentRef Id="lv" />
+            </Feature>
+            <Feature Id="lang_lfn" Level="1" Title="Lingua Franca Nova">
+                <ComponentRef Id="lfn_dict" />
+                <ComponentRef Id="lfn" />
+            </Feature>
+            <Feature Id="lang_lt" Level="1" Title="Lithuanian">
+                <ComponentRef Id="lt_dict" />
+                <ComponentRef Id="lt" />
+            </Feature>
+            <Feature Id="lang_jbo" Level="1" Title="Lojban">
+                <ComponentRef Id="jbo_dict" />
+                <ComponentRef Id="jbo" />
+            </Feature>
+            <Feature Id="lang_mk" Level="1" Title="Macedonian">
+                <ComponentRef Id="mk_dict" />
+                <ComponentRef Id="mk" />
+            </Feature>
+            <Feature Id="lang_ms" Level="1" Title="Malay">
+                <ComponentRef Id="ms_dict" />
+                <ComponentRef Id="ms" />
+            </Feature>
+            <Feature Id="lang_ml" Level="1" Title="Malayalam">
+                <ComponentRef Id="ml_dict" />
+                <ComponentRef Id="ml" />
+            </Feature>
+            <Feature Id="lang_mt" Level="1" Title="Maltese">
+                <ComponentRef Id="mt_dict" />
+                <ComponentRef Id="mt" />
+            </Feature>
+            <Feature Id="lang_mr" Level="1" Title="Marathi">
+                <ComponentRef Id="mr_dict" />
+                <ComponentRef Id="mr" />
+            </Feature>
+            <Feature Id="lang_nci" Level="1" Title="Nahuatl (Classical)">
+                <ComponentRef Id="nci_dict" />
+                <ComponentRef Id="nci" />
+            </Feature>
+            <Feature Id="lang_ne" Level="1" Title="Nepali">
+                <ComponentRef Id="ne_dict" />
+                <ComponentRef Id="ne" />
+            </Feature>
+            <Feature Id="lang_no" Level="1" Title="Norwegian">
+                <ComponentRef Id="no_dict" />
+                <ComponentRef Id="nb" />
+            </Feature>
+            <Feature Id="lang_or" Level="1" Title="Oriya">
+                <ComponentRef Id="or_dict" />
+                <ComponentRef Id="or" />
+            </Feature>
+            <Feature Id="lang_om" Level="1" Title="Oromo">
+                <ComponentRef Id="om_dict" />
+                <ComponentRef Id="om" />
+            </Feature>
+            <Feature Id="lang_pap" Level="1" Title="Papiamento">
+                <ComponentRef Id="pap_dict" />
+                <ComponentRef Id="pap" />
+            </Feature>
+            <Feature Id="lang_fa" Level="1" Title="Persian">
+                <ComponentRef Id="fa_dict" />
+                <ComponentRef Id="fa" />
+            </Feature>
+            <Feature Id="lang_fa_Latn" Level="1" Title="Persian (Pinglish)">
+                <ComponentRef Id="fa_dict" />
+                <ComponentRef Id="fa_Latn" />
+            </Feature>
+            <Feature Id="lang_pl" Level="1" Title="Polish">
+                <ComponentRef Id="pl_dict" />
+                <ComponentRef Id="pl" />
+            </Feature>
+            <Feature Id="lang_pt" Level="1" Title="Portuguese (Portugal)">
+                <ComponentRef Id="pt_dict" />
+                <ComponentRef Id="pt" />
+            </Feature>
+            <Feature Id="lang_pt_BR" Level="1" Title="Portuguese (Brazil)">
+                <ComponentRef Id="pt_dict" />
+                <ComponentRef Id="pt_BR" />
+            </Feature>
+            <Feature Id="lang_pa" Level="1" Title="Punjabi">
+                <ComponentRef Id="pa_dict" />
+                <ComponentRef Id="pa" />
+            </Feature>
+            <Feature Id="lang_ro" Level="1" Title="Romanian">
+                <ComponentRef Id="ro_dict" />
+                <ComponentRef Id="ro" />
+            </Feature>
+            <Feature Id="lang_ru" Level="1" Title="Russian">
+                <ComponentRef Id="ru_dict" />
+                <ComponentRef Id="ru" />
+            </Feature>
+            <Feature Id="lang_sr" Level="1" Title="Serbian">
+                <ComponentRef Id="sr_dict" />
+                <ComponentRef Id="sr" />
+            </Feature>
+            <Feature Id="lang_tn" Level="1" Title="Setswana">
+                <ComponentRef Id="tn_dict" />
+                <ComponentRef Id="tn" />
+            </Feature>
+            <Feature Id="lang_si" Level="1" Title="Sinhala">
+                <ComponentRef Id="si_dict" />
+                <ComponentRef Id="si" />
+            </Feature>
+            <Feature Id="lang_sk" Level="1" Title="Slovak">
+                <ComponentRef Id="sk_dict" />
+                <ComponentRef Id="sk" />
+            </Feature>
+            <Feature Id="lang_sl" Level="1" Title="Slovenian">
+                <ComponentRef Id="sl_dict" />
+                <ComponentRef Id="sl" />
+            </Feature>
+            <Feature Id="lang_es" Level="1" Title="Spanish">
+                <ComponentRef Id="es_dict" />
+                <ComponentRef Id="es" />
+            </Feature>
+            <Feature Id="lang_es_419" Level="1" Title="Spanish (Latin America)">
+                <ComponentRef Id="es_dict" />
+                <ComponentRef Id="es_419" />
+            </Feature>
+            <Feature Id="lang_sw" Level="1" Title="Swahili">
+                <ComponentRef Id="sw_dict" />
+                <ComponentRef Id="sw" />
+            </Feature>
+            <Feature Id="lang_sv" Level="1" Title="Swedish">
+                <ComponentRef Id="sv_dict" />
+                <ComponentRef Id="sv" />
+            </Feature>
+            <Feature Id="lang_ta" Level="1" Title="Tamil">
+                <ComponentRef Id="ta_dict" />
+                <ComponentRef Id="ta" />
+            </Feature>
+            <Feature Id="lang_tt" Level="1" Title="Tatar">
+                <ComponentRef Id="tt_dict" />
+                <ComponentRef Id="tt" />
+            </Feature>
+            <Feature Id="lang_te" Level="1" Title="Telugu">
+                <ComponentRef Id="te_dict" />
+                <ComponentRef Id="te" />
+            </Feature>
+            <Feature Id="lang_tr" Level="1" Title="Turkish">
+                <ComponentRef Id="tr_dict" />
+                <ComponentRef Id="tr" />
+            </Feature>
+            <Feature Id="lang_ur" Level="1" Title="Urdu">
+                <ComponentRef Id="ur_dict" />
+                <ComponentRef Id="ur" />
+            </Feature>
+            <Feature Id="lang_vi" Level="1" Title="Vietnamese">
+                <ComponentRef Id="vi_dict" />
+                <ComponentRef Id="vi" />
+            </Feature>
+            <Feature Id="lang_vi_VN_x_central" Level="1" Title="Vietnamese (Central)">
+                <ComponentRef Id="vi_dict" />
+                <ComponentRef Id="vi_VN_x_central" />
+            </Feature>
+            <Feature Id="lang_vi_VN_x_south" Level="1" Title="Vietnamese (South)">
+                <ComponentRef Id="vi_dict" />
+                <ComponentRef Id="vi_VN_X_south" />
+            </Feature>
+            <Feature Id="lang_cy" Level="1" Title="Welsh">
+                <ComponentRef Id="cy_dict" />
+                <ComponentRef Id="cy" />
+            </Feature>
+        </Feature>
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." Schedule="afterInstallValidate" />
+        <Media Id="1" Cabinet="cab1.cab" EmbedCab="yes" />
+        <Property Id="ALLUSERS" Value="1" />
+        <Property Id="WIX_DOWNGRADE_DETECTED" Secure="yes" />
+        <Property Id="WIX_UPGRADE_DETECTED" Secure="yes" />
+        <UIRef Id="WixUI_FeatureTree" />
+    </Product>
+</Wix>
