@@ -1,5 +1,4 @@
 # eSpeak-Sapi-5-Installer
-an installer that installs all the voices for the eSpeak engine found here: https://github.com/espeak-ng/espeak-ng
 eSpeak NG is a continuation of the eSpeak voices. It is an open source voice library that can be found here https://github.com/espeak-ng/espeak-ng installing there MSI gives only the English voice but the package actually contains lots more voices. I tried to build an XML file that would allow for installation of all the voices.
 
 # Success
